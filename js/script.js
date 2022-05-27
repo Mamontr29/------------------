@@ -44,6 +44,7 @@ $(function () {
 	// удаление дела по нажатию на крест 
 	$('.listTODO').on('click', '.remove', function (e) {
 		var classDel = $(this).parent().parent().attr('class'); //получает имя класса элемента
+		console.log(classDel);
 		$('.'+classDel).remove();
 		// e.preventDefault();
 		// return false;
