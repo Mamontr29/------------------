@@ -41,11 +41,19 @@ $(function () {
 			'min-height': '85px'
 		});
 	});
-	// удаление дела по нажатию на крест (работает не корректно, удаляет все дела)
-	$('.listTODO').on('click', '.remove', function () {
-		$('.remove').parent().parent().remove();
+	// удаление дела по нажатию на крест 
+	$('.listTODO').on('click', '.remove', function (e) {
+		var classDel = $(this).parent().parent().attr('class'); //получает имя класса элемента
+		$('.'+classDel).remove();
+		// e.preventDefault();
+		// return false;
 	});
 
+	// $("div").click(function(e){
+	// 	alert($(this).attr('class'));
+	// 	e.preventDefault();
+	// 	return false;
+	// })
 });
 
 
