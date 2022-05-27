@@ -1,5 +1,5 @@
 // TODO:
-// 1 кнопка для сворачивания описания
+// 1 кнопка для сворачивания описания +++++
 // 2 Сообщение СПИСОК ПУСТ...    ++++++
 // 3 сохранение введенных данных в localStorage
 // 4 дата добавления задания
@@ -38,7 +38,7 @@ $(function () {
 		$('.wrapper-todo').append('<div class="todo' + i + '"></div>');
 
 		// добавление названия дела
-		$('.todo' + i).prepend('<div class="todo-name' + i + '"><span></span><img class="remove" src="img/clear-button.png"></div>');
+		$('.todo' + i).prepend('<div class="todo-name' + i + '"><span></span><img class="remove" src="img/clear-button.png"><img class="collapse" src="img/strelka.png"></div>');
 		$('.todo' + i).css('background-color', '#fff');
 		$('.todo-name' + i + ' span').text(title);
 		// задание стилей для заголовка дела
@@ -47,11 +47,19 @@ $(function () {
 			'padding': '20px 0 20px 20px',
 			'border-bottom': '1px solid #f7f7f7'
 		});
-		$('.todo-name' + i + ' img').css({
+		// стиль для кнопки крест
+		$('.remove').css({
 			'padding-left': '20px',
 			'padding-top': '5px',
 			'cursor': 'pointer'
 		});
+				// стиль для кнопки сворачивания описания
+		$('.collapse').css({
+			'padding-left': '290px',
+			'padding-top': '5px',
+			'cursor': 'pointer'
+		});
+
 		// добавление описания дела
 		$('.todo' + i).append('<div class="todo-discription' + i + '"></div>');
 		$('.todo-discription' + i).text(discription);
@@ -65,13 +73,35 @@ $(function () {
 		});
 	});
 
-	// удаление дела по нажатию на крест 
-	$('.wrapper-todo').on('click', '.remove', function (e) {
+	// удаление дела по нажатию на крест и сворачивание или разворачивание описания при нажатии на стрелку 
+	$('.wrapper-todo').on('click', '.collapse, .remove', function () {
 		//получает имя класса элемента
-		var classDel = $(this).parent().parent().attr('class');
-		// удаление элемента по-полученному классу
-		$('.' + classDel).remove();
-		emptyWrapper();
+		var whatClass = $(this).attr('class');
+		// если класс remove то удаляем элемент в котором нажата кнопка
+		if (whatClass == "remove") {
+			// получение класса элемента Списка дел
+			var classDel = $(this).parent().parent().attr('class');
+			// удаление
+			$('.' + classDel).remove();
+		}
+		// в другом случае сворачиваем описание
+		else {
+			//получает имя класса элемента в котором нажата кнопка
+			var classCollapseParent = $(this).parent().parent().attr('class');
+			// получаем элемент с описанием дела
+			var classCollapse = $('.' + classCollapseParent).children('div:last');
+			// получаем класс элемент с описанием дела
+			var colapse = classCollapse.attr('class');
+			// условный цикл определяющий скрыто или нескрыто описание 
+			if ($('.' + colapse).css('display') == ('block')) {
+				// скрываем описание изменяя свойство css display:none
+				$('.' + colapse).css('display', 'none');
+				}
+			else {
+				// скрываем описание изменяя свойство css display: block
+				$('.' + colapse).css('display', 'block');
+				}
+			};
 	});
 });
 
