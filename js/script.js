@@ -43,8 +43,9 @@ $(function () {
 		$('.todo-name' + i + ' span').text(title);
 		// задание стилей для заголовка дела
 		$('.todo-name' + i).css({
+			'position': 'relative',
 			'font-size': '16px',
-			'padding': '20px 0 20px 20px',
+			'padding': '20px 20px 20px 20px',
 			'border-bottom': '1px solid #f7f7f7'
 		});
 		// стиль для кнопки крест
@@ -55,8 +56,9 @@ $(function () {
 		});
 				// стиль для кнопки сворачивания описания
 		$('.collapse').css({
-			'padding-left': '290px',
-			'padding-top': '5px',
+			'position': 'absolute',
+			'left': '455px',
+			'top': '25px',
 			'cursor': 'pointer'
 		});
 
