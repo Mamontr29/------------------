@@ -8,6 +8,7 @@
 </head>
 <body>
 	<div class="content-container">
+		<h1>Список дел. Создан с использование Javascript</h1>
 		<div class="flex-container">
 			<div class="listTODO">
 				<h2>Список дел:</h2>
@@ -20,7 +21,6 @@
 					<div class="titleTODO">
 						<label for="title">* Название</label>
 						<input name="title" type="text" id="title" required>
-						<p></p>
 					</div>
 					<div class="discriptionTODO">
 						<label for="discription">* Описание</label>
@@ -28,6 +28,11 @@
 					</div>
 					<div class="button">
 						<input type="button" value="Добавить дело" class="confirm">
+					</div>
+					<!-- описание кнопок сюда -->
+					<div class="buttons">
+						<div class="button-remove"><img src="img/clear-button.png" title="Кнопка удаления дела" alt="Кнопка удаления дела"> <span> - Кнопка удаления дела текущего дела</span></div>
+						<div class="button-collapse"><img src="img/strelka.png" title="Кнопка cворачивания-разворачивания описания дела" alt="Кнопка cворачивания-разворачивания описания дела"><span> - Кнопка cворачивания-разворачивания описания дела</span></div>
 					</div>
 				</form>
 			</div>

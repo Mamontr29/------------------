@@ -26,6 +26,16 @@ body {
 	max-width: 960px;
 	margin: 0 auto;
 }
+h1{
+	padding-top: 30px;
+	text-align: center;
+	font-size: 25px;
+	font-weight: bold;
+	
+}
+h1, h2{
+	text-shadow: 1px 1px 1px #666, 3px 3px 8px black;
+}
 .flex-container {
 	display: flex;
 	margin-top: 65px;
@@ -90,6 +100,15 @@ form{
 	background-color: #2174fd;
 	color: #fff;
 	font-size: 16px;
+	box-shadow: 8px 7px 13px 7px rgb(60, 60, 189);
+}
+.button input:hover {
+	background-color: rgba(33, 116, 253, 0.85);
+}
+.button input:active {
+	position: relative;
+	top: 3px;
+	left: 4px;
 }
 .empty {
 	padding-top: 50px;
@@ -114,6 +133,18 @@ form{
 	color: #8993ad;
 	padding: 10px 0 10px 20px;
 	min-height: 85px;
+}
+.buttons{
+	padding: 20px 20px;
+	border-top: 1px solid #ebebeb;
+	color: #8993ad;
+}
+.buttons span {
+	padding-bottom: 5px;
+}
+.buttons img{
+	padding-bottom: 5px;
+	padding-top: 3px;
 }
 
 
