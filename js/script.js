@@ -49,12 +49,6 @@ $(function () {
 		// e.preventDefault();
 		// return false;
 	});
-
-	// $("div").click(function(e){
-	// 	alert($(this).attr('class'));
-	// 	e.preventDefault();
-	// 	return false;
-	// })
 });
 
 
