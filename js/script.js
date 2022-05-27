@@ -1,39 +1,47 @@
 // TODO:
 // 1 кнопка для сворачивания описания
-// 2Сообщение СПИСОК ПУСТ...
+// 2 Сообщение СПИСОК ПУСТ...    ++++++
 // 3 сохранение введенных данных в localStorage
 // 4 дата добавления задания
 // 5 кнопка выполнено
 // 6 Возможно на дату
 
-
-
-
-
+//-----------------------------------------
 
 // задание переменной для создания уникального контейнера для дела
 var i = 0;
+// Функция проверки пустоты списка, если пустой то выводит надпись. как вызывать эту функцию - просто писать emptyWrapper()
+const emptyWrapper = () => {
+	if ($('.wrapper-todo').text() == "") {
+		$('.empty').css('display', 'block');
+	}
+	else { $('.empty').css('display', 'none'); };
+};
 
-
+// функция выполняется при полном формировании DOM-модели
 $(function () {
-	// if ($('.wrapper-todo').text() == " ") {
-	// 	$('.empty').css('display', 'block');
-	// }
-	// else { $('.empty').css('display', 'none'); };
 
+	// выполнение функции через заданный интервал
+	setInterval(emptyWrapper, 10);
+
+	// следит за кликом на кнопку создания Нового дела
 	$('.confirm').click(function () {
-		
+
+		// изменение индекса для создания уникального элемента Нового дела
 		i = i + 1;
 		
-		
-		var title = $('#title').val(); // Извлечение текста из инпута в переменную
+		// Извлечение текста из инпута в переменную
+		var title = $('#title').val(); 
 		var discription = $('#discription').val();
 		
-		$('.listTODO').append('<div class="todo' + i + '"></div>');
+		// добавление контейнера для нового дела
+		$('.wrapper-todo').append('<div class="todo' + i + '"></div>');
+
 		// добавление названия дела
 		$('.todo' + i).prepend('<div class="todo-name' + i + '"><span></span><img class="remove" src="img/clear-button.png"></div>');
 		$('.todo' + i).css('background-color', '#fff');
 		$('.todo-name' + i + ' span').text(title);
+		// задание стилей для заголовка дела
 		$('.todo-name' + i).css({
 			'font-size': '16px',
 			'padding': '20px 0 20px 20px',
@@ -47,6 +55,8 @@ $(function () {
 		// добавление описания дела
 		$('.todo' + i).append('<div class="todo-discription' + i + '"></div>');
 		$('.todo-discription' + i).text(discription);
+		
+		// задание стилей для заголовка дела
 		$('.todo-discription' + i).css({
 			'font-size': '14px',
 			'color': '#8993ad',
@@ -54,13 +64,14 @@ $(function () {
 			'min-height': '85px'
 		});
 	});
+
 	// удаление дела по нажатию на крест 
-	$('.listTODO').on('click', '.remove', function (e) {
-		var classDel = $(this).parent().parent().attr('class'); //получает имя класса элемента
-		console.log(classDel);
-		$('.'+classDel).remove();
-		// e.preventDefault();
-		// return false;
+	$('.wrapper-todo').on('click', '.remove', function (e) {
+		//получает имя класса элемента
+		var classDel = $(this).parent().parent().attr('class');
+		// удаление элемента по-полученному классу
+		$('.' + classDel).remove();
+		emptyWrapper();
 	});
 });
 
