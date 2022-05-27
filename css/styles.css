@@ -1,0 +1,119 @@
+/*Обнуление*/
+*{padding: 0;margin: 0;border: 0;}
+*,*:before,*:after{-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+nav,footer,header,aside{display: block;}
+html,body{height:100%;width:100%;font-size:100%;line-height:1;font-size:14px;-ms-text-size-adjust:100%;-moz-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
+input,button,textarea{font-family:inherit;}
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+a,a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
+/*--------------------*/
+
+body {
+	width: 1440px;
+	margin: 0 auto;
+	background-color: #f5f5f5;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.content-container {
+	max-width: 960px;
+	margin: 0 auto;
+}
+.flex-container {
+	display: flex;
+	margin-top: 65px;
+}
+h2{
+	font-size: 21px;
+	font-weight: 400;
+	padding-bottom: 35px;
+}
+.listTODO, .newTODO{
+	flex: 1;
+}
+.newTODO{
+	margin-left: 20px;
+}
+input, label{
+	display: block;
+}
+form{
+	width: 470px;
+	background-color: #fff;
+}
+.titleTODO{
+	padding-top: 50px;
+	padding-left: 40px;
+}
+.titleTODO label{
+	color: #8993ad;
+	font-size: 14px;
+	padding-bottom: 10px;
+}
+#title{
+	width: 388px;
+	height: 43px;
+	padding-left: 13px;
+	background-color: #f9f9f9;
+	border: 1px solid #ebebeb;
+	font-size: 16px;
+}
+.discriptionTODO{
+	padding-top: 30px;
+	padding-left: 40px;
+}
+.discriptionTODO label{
+	color: #8993ad;
+	font-size: 14px;
+	padding-bottom: 10px;
+}
+#discription{
+	width: 388px;
+	height: 288px;
+	padding: 20px 10px;
+	background-color: #f9f9f9;
+	border: 1px solid #ebebeb;
+	resize: none;
+}
+.button{
+	padding: 30px 0 55px 40px;
+}
+.button input{
+	padding: 20px 55px;
+	background-color: #2174fd;
+	color: #fff;
+	font-size: 16px;
+}
+.empty {
+	padding-top: 50px;
+	color: #8993ad;
+	font-size: 16px;
+}
+.todo{
+	background-color: #fff;
+}
+.todo-name{
+	font-size: 16px;
+	padding: 20px 0 20px 20px;
+	border-bottom: 1px solid #f7f7f7;
+}
+.todo-name img{
+	padding-left: 20px;
+	padding-top: 5px;
+	cursor: pointer;
+}
+.todo-discription{
+	font-size: 14px;
+	color: #8993ad;
+	padding: 10px 0 10px 20px;
+	min-height: 85px;
+}
+
+
