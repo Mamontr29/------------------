@@ -147,5 +147,8 @@ form{
 	padding-bottom: 5px;
 	padding-top: 3px;
 }
+.rotate{
+	transform: rotate(90deg);
+}
 
 
