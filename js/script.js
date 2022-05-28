@@ -103,7 +103,7 @@ $(function () {
 			// получение класса элемента Списка дел
 			var classDel = $(this).parent().parent().attr('class');
 			// удаление
-			$('.' + classDel).remove();
+			$('.' + classDel).fadeOut();
 		}
 		// в другом случае сворачиваем описание
 		else {
@@ -114,13 +114,13 @@ $(function () {
 			// получаем класс элемент с описанием дела
 			var colapse = classCollapse.attr('class');
 			// условный цикл определяющий скрыто или нескрыто описание 
-			if ($('.' + colapse).css('display') == ('block')) {
+			if ($('.' + colapse).is(':visible')) {
 				// скрываем описание изменяя свойство css display:none
-				$('.' + colapse).css('display', 'none');
+				$('.' + colapse).fadeOut();
 				}
 			else {
-				// скрываем описание изменяя свойство css display: block
-				$('.' + colapse).css('display', 'block');
+				// показываем описание изменяя свойство css display: block при помощи метода fadeIn (плавное изменеие прозрачности)
+				$('.' + colapse).fadeIn();
 				}
 			};
 	});
